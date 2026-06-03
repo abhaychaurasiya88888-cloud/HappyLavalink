@@ -5,6 +5,7 @@ server:
 lavalink:
   plugins:
     - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.5"
+    - dependency: "com.github.topi314.lavasrc:lavasrc-plugin:4.8.0"
 
   server:
     password: "happymusic"
@@ -18,13 +19,18 @@ lavalink:
       http: true
       local: false
 
-youtubePlugin:
-  enabled: true
-  allowSearch: true
-  allowDirectVideoIds: true
-  clients:
-    - MUSIC
-    - WEB
+plugins:
+  youtube:
+    enabled: true
+    allowSearch: true
+    allowDirectVideoIds: true
+
+  lavasrc:
+    sources:
+      spotify: true
+      applemusic: true
+      deezer: true
+      yandexmusic: false
 
 logging:
   level:
