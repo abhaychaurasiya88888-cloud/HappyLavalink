@@ -3,11 +3,14 @@ server:
   address: 0.0.0.0
 
 lavalink:
+  plugins:
+    - dependency: "dev.lavalink.youtube:youtube-plugin:1.11.5"
+
   server:
     password: "happymusic"
 
     sources:
-      youtube: true
+      youtube: false
       soundcloud: true
       bandcamp: true
       twitch: true
@@ -15,21 +18,14 @@ lavalink:
       http: true
       local: false
 
-    bufferDurationMs: 400
-    frameBufferDurationMs: 5000
-    opusEncodingQuality: 10
-    resamplingQuality: HIGH
-    trackStuckThresholdMs: 10000
-
-plugins:
-  youtube:
-    enabled: true
-
-metrics:
-  prometheus:
-    enabled: false
+youtubePlugin:
+  enabled: true
+  allowSearch: true
+  allowDirectVideoIds: true
+  clients:
+    - MUSIC
+    - WEB
 
 logging:
   level:
     root: INFO
-    lavalink: INFO
